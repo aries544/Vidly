@@ -1,0 +1,31 @@
+﻿@model Vidly.Models.Customer
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>MembershipType</td>
+            <td>@Model.MembershipType.Nombre</td>
+        </tr>
+        @if (!Model.BirthDate.Equals(new DateTime(1900, 1, 1)))
+        {
+            <tr>
+                <td>BirthDate</td>
+                <td>@Model.BirthDate</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
